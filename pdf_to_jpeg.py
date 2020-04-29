@@ -1,16 +1,18 @@
-
 from pdf2image import convert_from_path
 import os
 
-file_name = 'pharmaceutical-development-con-clo-sys.pdf'
-pdf_name = file_name.split('.')[0]
-folder_image = pdf_name + '_images'
 
-os.mkdir(folder_image)
-os.mkdir(folder_text)
+def extract_images(folder_pdf, file_pdf):
+    name = file_pdf.split('.')[0]
+    folder_image = './data/' + name + '_images'
+    if not os.path.exists(folder_image):
+        os.makedirs(folder_image)
 
-images = convert_from_path(file_name)
-for cnt, image in enumerate(images):
-    image.save(folder_image + '/' + str(cnt) + '.jpg', 'JPEG')
+    images = convert_from_path(folder_pdf + '/' + file_pdf)
+    for cnt, image in enumerate(images):
+        image.save(folder_image + '/' + str(cnt) + '.jpg', 'JPEG')
 
+
+if __name__ == '__main__':
+    extract_images('.', 'pharmaceutical-development-con-clo-sys.pdf');
 
