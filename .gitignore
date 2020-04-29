@@ -1,0 +1,6 @@
+venv
+*.pdf
+*.jpg
+.idea
+*.jpg
+__pycache__/
