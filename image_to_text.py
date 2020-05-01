@@ -21,6 +21,3 @@ def extract_doc_text(images_folder):
             text_file.close()
 
 
-if __name__ == '__main__':
-    image_folder = './data/images/pharmaceutical-development-con-clo-sys_images'
-    extract_doc_text(image_folder)
